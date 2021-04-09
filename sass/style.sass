@@ -1,0 +1,298 @@
+@import 'reset'
+@import 'global'
+
+//* white-theme-colors
+$whiteBg: #fff
+$whiteBgSecond: #ffecda
+$whiteBgCard: #ffdcb8
+$whiteBtnColor: #a6d0e4
+$whiteFont: #202329
+//* dark-theme-colors
+$darkBg: #222831
+$darkBgSecond: #393e46
+$darkBgCard: #aaaaaa
+$darkBtnColor: #f1aa9b
+$darkFont: #fff
+
+//* main -------------------------------------------
+body
+   background-color: $whiteBg
+   font-family: Arial, Helvetica, sans-serif
+nav
+   display: flex
+   justify-content: space-between
+   padding: 20px
+   border-radius: 20px
+.nav__page
+   font-size: 24px
+   font-weight: bold
+   border-radius: 20px
+   &-home
+      color: #202329
+      &:hover
+         color: $whiteBtnColor
+         text-decoration: underline
+   &-add
+      color: $whiteFont
+      padding: 10px 20px
+      border-radius: 10px
+      border: 2px solid $whiteBtnColor
+
+      transition: 0.2s
+      margin-left: 20px
+      &:hover
+         color: $darkFont
+         background-color: $whiteBtnColor
+         transition: 0.2s
+         box-shadow: 0 0 10px $whiteBtnColor
+.form-check
+   display: flex
+   justify-content: space-between
+   align-items: center
+   background-color: $whiteBg
+   font-weight: bold
+@keyframes rainbow
+   0%
+      background-position: 0% 100%
+   50%
+      background-position: 100% 0%
+   100%
+      background-position: 0% 100%
+
+.form-gradient
+   padding: 0px 2px 2px 2px
+   height: 22px
+   border-radius: 2px
+   background: linear-gradient(to right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)
+   animation: rainbow .4s linear infinite
+   background-size: 200% 200%
+   &:hover
+      box-shadow: 0 10px 10px $whiteBtnColor
+.dark-mode-btn
+   background-color: transparent
+   border: none
+   outline: none
+   cursor: pointer
+h1
+   text-align: center
+   font-weight: bold
+   padding: 50px 0px
+   font-size: 60px
+
+//* card -----------------------------------
+.main
+   background-color: $whiteBgSecond
+   padding-top: 30px
+.card__list
+   display: flex
+   flex-wrap: wrap
+   justify-content: space-between
+.card
+   background-color: $whiteBgCard
+   border-radius: 20px
+   display: flex
+   transition: 0.2s
+   height: 200px
+   width: 43vw
+   margin: 20px 10px
+   >img
+      margin-right: 20px
+      border-radius: 10px 0px 0px 10px
+   &:hover
+      transform: scale(1.01)
+      transition: 0.2s
+      box-shadow: 0 0 5px rgba(0,0,0,0.5)
+   .card__body
+      padding: 20px
+.card__title
+   font-size: 2rem
+.card-btn
+   display: block
+   width: 110px
+   text-align: center
+   cursor: pointer
+   margin-top: 40px
+   display: block
+   background-color: transparent
+   border: none
+   border-bottom: 2px solid $whiteBtnColor
+   border-radius: 7px
+   color: $whiteFont
+   font-weight: bold
+   transition: 0.2s
+   outline: none
+   &:hover
+      background-color: $whiteBtnColor
+      box-shadow: 0 0 10px $whiteBtnColor
+      transition: 0.2s
+      color: #fff
+
+//* full-page-card ---------------------
+.card-info__box
+   background-color: $whiteBgCard
+   display: flex
+   margin: 0 auto
+   padding: 20px 40px
+   // border: 2px solid $whiteBtnColor
+   border-radius: 10px
+.card-info__text
+   padding: 0px 30px
+   >h3
+      font-size: 40px
+      color: $whiteFont
+.card-info__status
+   background-color: $whiteBg
+   border-radius: 10px
+   padding: 10px
+   margin: 10px 0
+.card-info__img
+   width: 300px
+   height: 300px
+.episode-column
+   display: flex
+   flex-direction: column
+.card-info__episode
+   @extend .card-info__status
+   a
+      color: $whiteFont
+//* form ---------------------------------
+.form
+   display: flex
+   flex-direction: column
+   width: 40vw
+   margin: 0 auto
+   button
+      color: #202329
+      padding: 10px 20px
+      transition: 0.2s
+      border-radius: 10px
+      border: 2px solid $whiteBtnColor
+      margin-left: 20px
+      background-color: #fff
+      font-weight: bold
+      font-size: 24px
+      margin: 20px 0px
+      cursor: pointer
+      outline: none
+      width: 200px
+      align-self: center
+      &:hover
+         background-color: $whiteBtnColor
+         color: #fff
+   input
+      outline: none
+      border-radius: 10px
+      padding: 10px 20px
+      border: 2px solid $whiteBtnColor
+      margin: 10px 0px
+      background-color: transparent
+      &:focus
+         background-color: #fff
+         box-shadow: 0 0 15px $whiteBtnColor
+         transition: 0.2s
+   h3
+      text-align: start
+
+//* create new card ---------------------------- 
+.added-cards
+   display: flex
+   justify-content: space-between
+   flex-wrap: wrap
+   .new-card
+      @extend .card
+      img
+         max-width: 18vw
+         height: auto
+.new-card__description
+   padding: 20px 10px
+   h2
+      font-size: 40px
+   span
+      font-size: 17px
+      font-weight: bold
+//* footer ---------------------------
+// .footer h4
+//    background-color: $darkBg
+//    color: #fff
+
+//* DARK MODE ===============================
+
+body.dark-mode
+   //* --- main ---
+   background-color: $darkBg
+   .dark-mode-btn
+      color: $darkFont
+   .form-check
+      background-color: $darkBg
+   .nav__page-home
+      color: $darkFont
+      &:hover
+         color: $darkBtnColor
+   .nav__page-add
+      border: 2px solid $darkBtnColor
+      color: $darkFont
+      &:hover
+         background-color: $darkBtnColor
+         box-shadow: 0 0 10px $darkBtnColor
+   h1
+      color: $darkFont
+
+   //* --- card ---
+   .main
+      background-color: $darkBgSecond
+   .card
+      background-color: $darkBg
+   .card__title
+      color: $darkFont
+   .card-btn
+      border-bottom: 2px solid $darkBtnColor
+      color: $darkFont
+      &:hover
+         background-color: $darkBtnColor
+         color: $whiteFont
+         box-shadow: 0 0 10px $darkBtnColor
+   .status,.gender
+      color: $darkFont
+
+   //* --- form ---
+   .form-gradient:hover
+      box-shadow: 0 10px 10px -9px $darkBtnColor
+
+   .form button
+      color: $darkFont
+      border: 2px solid $darkBtnColor
+      background-color: transparent
+      &:hover
+         background-color: $darkBtnColor
+         color: $darkFont
+         box-shadow: 0 0 15px $darkBtnColor
+   input
+      border: 2px solid $darkBtnColor
+      background-color: #fff
+      &:focus
+         background-color: #fff
+         box-shadow: 0 0 15px $darkBtnColor
+
+   //* --- create new card ---
+   .new-card__description
+      color: $darkFont
+   .dark-theme-bg
+      background-image: url('../img/coolbg.gif')
+      background-position: center
+      background-size: cover
+      display: block
+      height: 200px
+      width: 100%
+   //* --- card page info ---
+   .card-info__text h3
+      color: $darkFont
+   .card-info__status
+      color: $darkFont
+      background-color: $darkBgSecond
+   .card-info__episode
+      color: $darkFont
+      background-color: $darkBgSecond
+      a
+         color: $darkFont
+   .card-info__box
+      background-color: $darkBg

@@ -1,0 +1,31 @@
+@@include('./layout/header.html')
+
+<h1>Add new character </h1>
+<div class="main">
+   <div class="container">
+
+      <form action="" class="form" id="form">
+         <input type="text" placeholder="hero name" name="name">
+         <input type="text" placeholder="small history about" name="description">
+         <h3>choose a gender</h3>
+         <div class="form-radio">
+            <input type="radio" id="addChoice1" name="gender" value="alien">
+            <label for="addChoice1">alien</label>
+            <input type="radio" id="addChoice2" name="gender" value="human">
+            <label for="addChoice2">human</label>
+            <input type="radio" id="addChoice3" name="gender" value="ork" checked="checked">
+            <label for="addChoice3">ork</label>
+         </div>
+         <input type="text" placeholder="paste url picture" name="src_img">
+         <button type="submit">Create</button>
+      </form>
+
+      <div class="added-cards" id="added-cards">
+
+      </div>
+
+   </div>
+</div>
+
+
+@@include('./layout/footer.html')
